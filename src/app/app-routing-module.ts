@@ -1,7 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { List } from './list/list';
+import { Cart } from './cart/cart';
+import { Create } from './create/create';
+import { Delete } from './delete/delete';
+import { Footer } from './footer/footer';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: "", redirectTo: "list", pathMatch: "full" },
+  {path:"list", component:List },
+  { path: "cart", component: Cart },
+  { path: "create", component: Create},
+  { path: "delete", component: Delete},
+  { path: "footer", component: Footer},
+  { path: "**", redirectTo: "list", pathMatch: "full" }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

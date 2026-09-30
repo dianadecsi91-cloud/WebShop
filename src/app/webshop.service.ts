@@ -9,9 +9,13 @@ products: Product[]=[]
  
 
 constructor(){
-this.seed()
+this.read()
   }
   save(){localStorage.setItem("product_DB", JSON.stringify(this.products))}
+
+  read(){ let jsonArray= JSON.parse(localStorage.getItem("product_DB") ?? "[]")   
+  this.products = Object.values(jsonArray).map(x => Object.assign(new Product(),x))
+}
   
 seed() {
   let p = new Product()

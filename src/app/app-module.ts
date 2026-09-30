@@ -8,10 +8,12 @@ import { Nav } from './nav/nav';
 import { Cart } from './cart/cart';
 import { Create } from './create/create';
 import { Delete } from './delete/delete';
+import { FormsModule } from '@angular/forms';
+import { Footer } from './footer/footer';
 
 @NgModule({
-  declarations: [App, List, Nav, Cart, Create, Delete],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [App, List, Nav, Cart, Create, Delete, Footer],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })
