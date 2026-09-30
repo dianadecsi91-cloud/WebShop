@@ -1,1 +1,13 @@
-export class Product {}
+import { Guid } from "guid-typescript"
+
+export class Product {
+
+id: string= Guid.create().toString()
+name: string = ""
+category: string = ""
+price: number|null = null
+description: string = ""
+inStock: boolean = false
+stock: number|null = null
+quantity: number|null = null
+}
