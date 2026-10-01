@@ -11,9 +11,10 @@ import { Delete } from './delete/delete';
 import { FormsModule } from '@angular/forms';
 import { Footer } from './footer/footer';
 import { DescriptionProduct } from './description-product/description-product';
+import { Edit } from './edit/edit';
 
 @NgModule({
-  declarations: [App, List, Nav, Cart, Create, Delete, Footer, DescriptionProduct],
+  declarations: [App, List, Nav, Cart, Create, Delete, Footer, DescriptionProduct, Edit],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],

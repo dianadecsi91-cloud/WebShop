@@ -26,7 +26,7 @@ export class WebshopService {
     this.save()
   }
   delete(product: Product){
-    this.products= this.products.filter(x=> x.name !== product.name)
+    this.products = this.products.filter(x=> x.name !== product.name)
     this.save()
   }
 
