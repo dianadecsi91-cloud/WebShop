@@ -9,8 +9,7 @@ export class WebshopService {
 
 
   constructor() {
-
-    this.read()
+  this.read()
   }
 
   save() { localStorage.setItem("product_DB", JSON.stringify(this.products)) }
@@ -27,7 +26,7 @@ export class WebshopService {
     this.save()
   }
   delete(product: Product){
-    this.products= this.products.filter(x=> x.name !== this.products.name)
+    this.products= this.products.filter(x=> x.name !== product.name)
     this.save()
   }
 
