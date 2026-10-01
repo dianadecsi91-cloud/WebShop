@@ -17,13 +17,13 @@ export class List {
   }
   addToCart(){}
 
-  Inkr(): void {
-  this.service.products = [...this.service.products].sort((a,b) => Number(a.price) - Number(b.price))
-}
-
-Dekr(): void {
-  this.service.products = [...this.service.products].sort((a,b) => Number(b.price) - Number(a.price))
-}
+  Inkr(): void{
+    
+     this.service.products.sort((a,b)=> Number(a.price)- Number(b.price))
+  }
+  Dekr():void{
+    this.service.products.sort((a,b)=> Number(b.price)- Number(a.price))
+  }
   
   
 }

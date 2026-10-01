@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { WebshopService } from '../webshop.service';
+import { Product } from '../product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
@@ -6,4 +9,21 @@ import { Component } from '@angular/core';
   templateUrl: './edit.html',
   styleUrl: './edit.css',
 })
-export class Edit {}
+export class Edit {
+  product: Product = new Product()
+  editDiv: boolean = false
+
+  constructor(public router: Router, public service: WebshopService) { }
+
+  edit(item: Product) {
+    this.product = item
+    this.editDiv = true
+    this.service.edit(this.product)
+    this.router.navigateByUrl("edit")
+  }
+  save() {
+    this.service.save()
+    this.router.navigateByUrl("list")
+  }
+  addToCart() { }
+}

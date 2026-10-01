@@ -1,1 +1,29 @@
-<p>edit works!</p>
+<div div *ngIf="!editDiv" class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+    <div class="col" *ngFor="let item of service.products">
+        <div class="card h-100">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">{{item.category}}</p>
+                <p class="card-text">{{item.description}}</p>
+                <p class="card-text">{{item.price}}</p>
+                <p class="card-text">{{item.stock}}</p>
+                <p class="card-text">{{item.id}}</p>
+
+                <a routerLink="cart" (click)="addToCart()" class="btn btn-primary">Add to cart</a>
+                <button class="btn btn-primary" (click)="edit(item)">Edit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div *ngIf="editDiv">
+    <input disabled class="form-control" type="id" placeholder="Id..." [(ngModel)]="product.id">
+    <input class="form-control" type="text" placeholder="Name..." [(ngModel)]="product.name">
+    <input class="form-control" type="text" placeholder="Category..." [(ngModel)]="product.category">
+    <input class="form-control" type="number" placeholder="Price..." [(ngModel)]="product.price">
+    <input class="form-control" type="text" placeholder="Description..." [(ngModel)]="product.description">
+    <input class="form-control" type="number" placeholder="Stock..." [(ngModel)]="product.stock">
+    <input class="form-control" type="text" placeholder="Image URL..." [(ngModel)]="product.image">
+    <button (click)="save()" class="btn btn-primary m-2">Save</button>
+</div>
