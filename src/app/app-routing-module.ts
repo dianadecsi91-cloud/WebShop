@@ -4,15 +4,15 @@ import { List } from './list/list';
 import { Cart } from './cart/cart';
 import { Create } from './create/create';
 import { Delete } from './delete/delete';
-import { Footer } from './footer/footer';
+import { DescriptionProduct } from './description-product/description-product';
 
 const routes: Routes = [
-  { path: "", redirectTo: "list", pathMatch: "full" },
-  {path:"list", component:List },
   { path: "cart", component: Cart },
+  { path: "list", component: List },
   { path: "create", component: Create},
   { path: "delete", component: Delete},
-  { path: "footer", component: Footer},
+  { path: "descriptionProduct", component: DescriptionProduct},
+  { path: "", redirectTo: "list", pathMatch: "full" },
   { path: "**", redirectTo: "list", pathMatch: "full" }
 ];
 

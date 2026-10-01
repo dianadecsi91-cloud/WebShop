@@ -1,15 +1,26 @@
-<div class="card w-75 mb-3">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Button</a>
-  </div>
+<div class="container-fluid text-center">
+    <div class="button"><button (click)="Inkr()" type="button" class="btn btn-info m-2" style="background-color: #e3f2fd;">
+  <i class="bi bi-arrow-up"></i>Növekvő
+</button>
+<button (click)="Dekr()" type="button" class="btn btn-info m-2" style="background-color: #e3f2fd;">
+    <i class="bi bi-arrow-down"></i>Csökkenő</button>
+    <button type="button" class="btn btn-dark m-2" ><i class="bi bi-circle-fill"></i> Elérhető</button>
 </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        <div class="col" *ngFor="let item of service.products">
+            <div class="card h-100" >
+                <img src="" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <p class="card-text">{{item.category}}</p>
+                    <p class="card-text">{{item.description}}</p>
+                    <p class="card-text">{{item.price}}</p>
+                    <p class="card-text">{{item.stock}}</p>
+                    <p class="card-text">{{item.id}}</p>
 
-<div class="card w-50">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Button</a>
-  </div>
+                    <a routerLink="cart" (click)="addToCart()" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

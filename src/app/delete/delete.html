@@ -1,1 +1,7 @@
-<p>delete works!</p>
+<select [(ngModel)]="product">
+    <option [ngValue]="item" *ngFor="let item of service.products">{{item.name}}
+
+    </option>
+</select>
+
+<button (click)="delete()" class="btn btn-primary" >Delete</button>

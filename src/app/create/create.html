@@ -1,1 +1,13 @@
-<p>create works!</p>
+<input disabled class="form-control" type="id" placeholder="Id..." [(ngModel)]="product.id">
+<input class="form-control" type="text" placeholder="Name..." [(ngModel)]="product.name">
+<input class="form-control" type="text" placeholder="Category..."[(ngModel)]="product.category">
+<input class="form-control" type="number" placeholder="Price..."[(ngModel)]="product.price">
+<input class="form-control" type="text" placeholder="Description..."[(ngModel)]="product.description">
+<input class="form-control" type="number" placeholder="Stock..."[(ngModel)]="product.stock">
+<input class="form-control" type="text" placeholder="Image URL..." [(ngModel)]="product.image">
+
+
+<button (click)="create()" type="button" class="btn btn-primary">Create Product</button>
+
+
+

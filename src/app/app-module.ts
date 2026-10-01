@@ -10,9 +10,10 @@ import { Create } from './create/create';
 import { Delete } from './delete/delete';
 import { FormsModule } from '@angular/forms';
 import { Footer } from './footer/footer';
+import { DescriptionProduct } from './description-product/description-product';
 
 @NgModule({
-  declarations: [App, List, Nav, Cart, Create, Delete, Footer],
+  declarations: [App, List, Nav, Cart, Create, Delete, Footer, DescriptionProduct],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],

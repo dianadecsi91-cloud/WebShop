@@ -9,5 +9,5 @@ price: number|null = null
 description: string = ""
 inStock: boolean = false
 stock: number|null = null
-quantity: number|null = null
+image: string = ''
 }
