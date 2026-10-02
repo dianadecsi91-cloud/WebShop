@@ -32,5 +32,8 @@ export class List {
    this.product = this.service.products.reduce((a,b) => (b.price!  > a.price! ? b : a))
    this.cheapDiv = true
  }
+ back() {
+  this.cheapDiv = false
+}
   
 }
