@@ -6,6 +6,7 @@ import { Product } from './product';
 })
 export class WebshopService {
   products: Product[] = []
+  
 
   constructor() {
   this.read()
@@ -29,11 +30,11 @@ export class WebshopService {
     this.save()
   }
   edit(product: Product){
-    let idx= this.products.findIndex(x=> x.id === product.id)
-    this.products[idx]= product
+    let idx= this.products.findIndex(x => x.id !== product.id)
+    this.products [idx]= product
     this.save()
   }
-
+   
   seed(): void {
     let p = new Product()
     p.id = "7f2c9a1e-3b45-4d91-8a6f-12e9c5b0a841"

@@ -10,4 +10,8 @@ description: string = ""
 inStock: boolean = false
 stock: number|null = null
 image: string = ''
+
+ getShortId(): string{
+    return this.id.split('-')[0]
+}
 }

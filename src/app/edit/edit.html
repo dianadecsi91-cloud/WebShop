@@ -1,4 +1,4 @@
-<div div *ngIf="!editDiv" class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+<div *ngIf="!content" class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
     <div class="col" *ngFor="let item of service.products">
         <div class="card h-100">
             <img src="" class="card-img-top" alt="...">
@@ -8,7 +8,7 @@
                 <p class="card-text">{{item.description}}</p>
                 <p class="card-text">{{item.price}}</p>
                 <p class="card-text">{{item.stock}}</p>
-                <p class="card-text">{{item.id}}</p>
+                <p class="card-text">{{item.getShortId()}}</p>
 
                 <a routerLink="cart" (click)="addToCart()" class="btn btn-primary">Add to cart</a>
                 <button class="btn btn-primary" (click)="edit(item)">Edit</button>
@@ -17,7 +17,7 @@
         </div>
     </div>
 </div>
-<div *ngIf="editDiv">
+<div ng *ngIf="content">
     <input disabled class="form-control" type="id" placeholder="Id..." [(ngModel)]="product.id">
     <input class="form-control" type="text" placeholder="Name..." [(ngModel)]="product.name">
     <input class="form-control" type="text" placeholder="Category..." [(ngModel)]="product.category">

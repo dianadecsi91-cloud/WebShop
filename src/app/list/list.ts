@@ -11,19 +11,26 @@ import { Router } from '@angular/router';
 })
 export class List {
   product: Product = new Product()
+  cheapDiv: boolean = false
 
-  constructor(public service: WebshopService){
+  constructor(public service: WebshopService) { }
+  addToCart() { }
 
+  Inkr(): void {
+    this.service.products.sort((a, b) => Number(a.price) - Number(b.price))
   }
-  addToCart(){}
+  Dekr(): void {
+    this.service.products.sort((a, b) => Number(b.price) - Number(a.price))
+  }
 
-  Inkr(): void{
-    
-     this.service.products.sort((a,b)=> Number(a.price)- Number(b.price))
+  cheap() {
+    this.product = this.service.products.reduce((a, b) => (a.price! < b.price! ? a : b))
+    this.cheapDiv = true
   }
-  Dekr():void{
-    this.service.products.sort((a,b)=> Number(b.price)- Number(a.price))
-  }
-  
+
+  exp(){ 
+   this.product = this.service.products.reduce((a,b) => (b.price!  > a.price! ? b : a))
+   this.cheapDiv = true
+ }
   
 }

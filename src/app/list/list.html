@@ -1,12 +1,17 @@
 <div class="container-fluid text-center">
     <div class="button">
-        <button (click)="Inkr()" type="button" class="btn btn-info m-2"
-            style="background-color: #e3f2fd;"><i class="bi bi-arrow-up"></i>Növekvő</button>
-        <button (click)="Dekr()" type="button" class="btn btn-info m-2" style="background-color: #e3f2fd;">
-            <i class="bi bi-arrow-down"></i>Csökkenő</button>
         <button type="button" class="btn btn-dark m-2"><i class="bi bi-circle-fill"></i> Elérhető</button>
+        <button (click)="Inkr()" type="button" class="btn btn-info m-2"
+            style="background-color: #e3f2fd;"><i class="bi bi-arrow-up"></i>low to high</button>
+        <button (click)="Dekr()" type="button" class="btn btn-info m-2" style="background-color: #e3f2fd;">
+            <i class="bi bi-arrow-down"></i>high to low</button>
+        
+         <button (click)="cheap()" type="button" class="btn btn-info m-2"
+            style="background-color: #e3f2fd;"><i class="bi bi-coin"></i> cheapest</button>
+            <button (click)="exp()" type="button" class="btn btn-info m-2" style="background-color: #e3f2fd;">
+            <i class="bi bi-coin"></i> most expensive</button>
     </div>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+    <div *ngIf="!cheapDiv" class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
         <div class="col" *ngFor="let item of service.products">
             <div class="card h-100">
                 <img src="" class="card-img-top" alt="...">
@@ -16,11 +21,25 @@
                     <p class="card-text">{{item.description}}</p>
                     <p class="card-text">{{item.price}}</p>
                     <p class="card-text">{{item.stock}}</p>
-                    <p class="card-text">{{item.id}}</p>
+                    <p class="card-text">{{item.getShortId()}}</p>
 
                     <a routerLink="cart" (click)="addToCart()" class="btn btn-primary">Add to cart</a>
                 </div>
             </div>
         </div>
     </div>
+    <div *ngIf="cheapDiv" class="card h-100">
+                <img src="" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.category}}</p>
+                    <p class="card-text">{{product.description}}</p>
+                    <p class="card-text">{{product.price}}</p>
+                    <p class="card-text">{{product.stock}}</p>
+                    <p class="card-text">{{product.getShortId()}}</p>
+
+                    <a routerLink="cart" (click)="addToCart()" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+    
 </div>
