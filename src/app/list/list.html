@@ -21,6 +21,9 @@
                     <p class="card-text">{{item.description}}</p>
                     <p class="card-text">{{item.price}}</p>
                     <p class="card-text">{{item.stock}}</p>
+                    <p class="card-text">
+                     <span class="badge" [ngClass]="item.inStock ? ' text-bg-info' : 'text-bg-danger'">{{item.inStock ? 'Stock' : 'Instock'}}</span>
+                    </p>
                     <p class="card-text">{{item.getShortId()}}</p>
 
                     <a routerLink="cart" (click)="addToCart()" class="btn btn-primary">Add to cart</a>
@@ -35,6 +38,7 @@
                     <p class="card-text">{{product.category}}</p>
                     <p class="card-text">{{product.description}}</p>
                     <p class="card-text">{{product.price}}</p>
+                    
                     <p class="card-text">{{product.stock}}</p>
                     <p class="card-text">{{product.getShortId()}}</p>
 
