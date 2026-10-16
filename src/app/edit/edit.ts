@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class Edit {
   product: Product = new Product()
   content: boolean = false
+  cheapDiv: boolean = false
 
   constructor(public router: Router, public service: WebshopService) { }
 
@@ -22,6 +23,9 @@ export class Edit {
     this.router.navigateByUrl("edit")
    
   }
+   back() {
+  this.cheapDiv = false
+}
   save() {
     this.service.save()
     this.router.navigateByUrl("list")

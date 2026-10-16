@@ -6,12 +6,21 @@ import { Product } from './product';
 })
 export class WebshopService {
   products: Product[] = []
+  cart: Product[] = []
   
 
   constructor() {
   this.read()
+  this.readCart()
   }
+saveCart() {
+  localStorage.setItem("cart_DB", JSON.stringify(this.cart))
+}
 
+readCart() {
+  let jsonArray = JSON.parse(localStorage.getItem("cart_DB") ?? "[]")
+  this.cart = Object.values(jsonArray).map(x => Object.assign(new Product(), x))
+}
   save() { localStorage.setItem("product_DB", JSON.stringify(this.products)) }
 
   read() {
